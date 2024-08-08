@@ -6,17 +6,17 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            int maxAttempts = 10;
+            const int MAXATTEMPTS= 10;
             int nullify = 0;
-            int y = 9;
-            int yo = 8;
-            int you = 7;
-            int youa = 6;
-            int youar = 5;
-            int youare = 4;
-            int youareh = 3;
-            int youarehu = 2;
-            int youarehun = 1;
+            const int Y = 9;
+            const int YO = 8;
+            const int YOU = 7;
+            const int YOUA = 6;
+            const int YOUAR = 5;
+            const int YOUARE = 4;
+            const int YOUAREH = 3;
+            const int YOUAREHU = 2;
+            const int YOUAREHUN = 1;
 
             Console.WriteLine("Wanna Play a Game?");
 
@@ -34,14 +34,14 @@ namespace Hangman
                 guessedLetters[i] = '_';
             }
 
-            int attemptsLeft = maxAttempts;
+            int attemptsLeft = MAXATTEMPTS;
 
             while (attemptsLeft > nullify)
             {
                 Console.WriteLine("Current word: " + new string(guessedLetters));
                 Console.WriteLine("Guess a Letter: ");
                 char guess = char.ToLower(Console.ReadKey().KeyChar);
-                Console.WriteLine();
+                Console.WriteLine(); 
 
                 bool correctGuess = false;
 
@@ -53,29 +53,30 @@ namespace Hangman
                         correctGuess = true;
                     }
                 }
+ 
 
                 if (!correctGuess)
                 {
                     attemptsLeft--;
                     Console.WriteLine("Incorrect!  Attempts left: " + attemptsLeft);
 
-                    if (attemptsLeft == y)
+                    if (attemptsLeft == Y)
                         Console.WriteLine("\n     Y\n");
-                    if (attemptsLeft == yo)
+                    if (attemptsLeft == YO)
                         Console.WriteLine("\n     YO\n");
-                    if (attemptsLeft == you)
+                    if (attemptsLeft == YOU)
                         Console.WriteLine("\n     YOU\n");
-                    if (attemptsLeft == youa)
+                    if (attemptsLeft == YOUA)
                         Console.WriteLine("\n     YOU A\n");
-                    if (attemptsLeft == youar)
+                    if (attemptsLeft == YOUAR)
                         Console.WriteLine("\n     YOU AR\n");
-                    if (attemptsLeft == youare)
+                    if (attemptsLeft == YOUARE)
                         Console.WriteLine("\n     YOU ARE\n");
-                    if (attemptsLeft == youareh)
+                    if (attemptsLeft == YOUAREH)
                         Console.WriteLine("\n     YOU ARE H\n");
-                    if (attemptsLeft == youarehu)
+                    if (attemptsLeft == YOUAREHU)
                         Console.WriteLine("\n     YOU ARE HU\n");
-                    if (attemptsLeft == youarehun)
+                    if (attemptsLeft == YOUAREHUN)
                         Console.WriteLine("\n     YOU ARE HUN\n");
 
 
